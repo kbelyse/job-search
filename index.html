@@ -2,25 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Remote Job Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QuickJob Finder</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Remote Job Finder</h1>
+  <h1>Job Finder</h1>
 
-  <form id="job-form">
-    <input type="text" id="search" placeholder="Search jobs..." />
-    <select id="category">
+  <form id="job-form" aria-label="Search remote jobs">
+    <input
+      type="text"
+      id="search"
+      name="search"
+      placeholder="Search jobs..."
+      aria-label="Job search keywords"
+      autocomplete="off"
+    />
+
+    <select id="category" name="category" aria-label="Job category filter">
       <option value="">All Categories</option>
       <option value="software-dev">Software Dev</option>
       <option value="marketing">Marketing</option>
       <option value="sales">Sales</option>
+      <option value="design">Design</option>
+      <option value="customer-support">Customer Support</option>
+      <option value="data-science">Data Science</option>
+      <option value="writing">Writing</option>
+      <option value="project-management">Project Management</option>
+      <option value="finance">Finance</option>
+      <option value="education">Education</option>
+      <option value="healthcare">Healthcare</option>
+      <option value="legal">Legal</option>
+      <option value="other">Other</option>
     </select>
-    <button type="submit">Search</button>
+
+    <button type="submit" aria-label="Search jobs">Search Jobs</button>
   </form>
 
-  <div id="results"></div>
+  <main id="results" aria-live="polite" aria-atomic="true"></main>
 
   <script src="app.js"></script>
 </body>

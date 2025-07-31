@@ -1,61 +1,149 @@
+/* Reset some default spacing */
+* {
+  box-sizing: border-box;
+}
+
+/* Body & overall layout */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f6f8;
-  color: #333;
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
-h1 {
-  text-align: center;
-  color: #0066cc;
-}
-
-form {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #6b8dd6 0%, #b5c9f8 100%);
+  color: #2c3e50;
+  padding: 40px 20px;
+  max-width: 720px;
+  margin: 0 auto;
+  min-height: 100vh;
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Main title */
+h1 {
+  font-size: 2.8rem;
+  color: #fff;
+  margin-bottom: 30px;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  user-select: none;
+}
+
+/* Search form container */
+form#job-form {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  max-width: 700px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Inputs and select */
 input,
-select,
-button {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+select {
+  flex: 1 1 200px;
+  padding: 14px 18px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  transition: border-color 0.3s ease;
+  outline-offset: 2px;
 }
 
+/* Focus states */
+input:focus,
+select:focus {
+  border-color: #5271ff;
+  box-shadow: 0 0 8px rgba(82, 113, 255, 0.4);
+}
+
+/* Search button */
 button {
-  background-color: #0066cc;
+  background-color: #5271ff;
   color: white;
-  cursor: pointer;
+  font-weight: 600;
+  padding: 14px 28px;
+  font-size: 1.1rem;
   border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  flex: 0 0 auto;
+  box-shadow: 0 8px 18px rgba(82, 113, 255, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
 }
 
-button:hover {
-  background-color: #004a99;
+button:hover,
+button:focus {
+  background-color: #3f58d7;
+  box-shadow: 0 12px 30px rgba(63, 88, 215, 0.7);
 }
 
+/* Results container */
+#results {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Individual job card */
 #results > div {
   background-color: #fff;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px 28px;
+  margin-bottom: 22px;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+#results > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Job title */
 #results h3 {
   margin-top: 0;
-  color: #004a99;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #3f58d7;
 }
 
+/* Company & location */
+#results p {
+  margin: 8px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Job link */
 a {
-  color: #0066cc;
+  color: #5271ff;
+  font-weight: 600;
   text-decoration: none;
+  font-size: 1rem;
+  user-select: text;
 }
 
-a:hover {
+a:hover,
+a:focus {
   text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  form#job-form {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  input,
+  select,
+  button {
+    width: 100%;
+    flex: none;
+  }
 }
