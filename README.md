@@ -128,4 +128,4 @@ docker pull kbelyse/wi-job-finder:v1
 
 ## Demo Video
 
-_[Video demonstration about the job finder application](https://youtu.be/thieie)_
+_[Video demonstration about the job finder application](https://youtu.be/ahNcuKIxZes)_
