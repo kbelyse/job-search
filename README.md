@@ -43,14 +43,14 @@ cd <repo-folder>
 2. Build the Docker image for the application:
 
 ```bash
-docker build -t kalasa077/remote-job-finder:v1 .
+docker build -t kbelyse/wi-job-finder:v1 .
 ```
 
 3. Run two containers on different ports to simulate multiple instances:
 
 ```bash
-docker run -d -p 8081:80 kalasa077/remote-job-finder:v1
-docker run -d -p 8082:80 kalasa077/remote-job-finder:v1
+docker run -d -p 8081:80 kbelyse/wi-job-finder:v1
+docker run -d -p 8082:80 kbelyse/wi-job-finder:v1
 ```
 
 4. Build and run the HAProxy container which will act as the load balancer:
@@ -91,25 +91,25 @@ On Windows and Mac, `host.docker.internal` can be used instead, but this hostnam
 
 The Docker image for this project is publicly available at:
 
-[https://hub.docker.com/r/kalasa077/remote-job-finder](https://hub.docker.com/r/kalasa077/remote-job-finder)
+[https://hub.docker.com/r/kbelyse/wi-job-finder](https://hub.docker.com/r/kbelyse/wi-job-finder)
 
 You can pull the image using:
 
 ```bash
-docker pull kalasa077/remote-job-finder:v1
+docker pull kbelyse/wi-job-finder:v1
 ```
 
 ---
 
-## Challenges Faced
+## Challenges Encountered
 
-- **HAProxy hostname resolution:** On Linux, `host.docker.internal` does not resolve by default, so it was necessary to use the Docker bridge IP `172.17.0.1` for backend servers.
+- **HAProxy hostname resolution:** On Linux, `host.docker.internal` doesn't resolve by default, so I used the Docker bridge IP `172.17.0.1` for backend servers.
 - **Port conflicts:** Managing multiple containers and ports required careful planning to avoid binding conflicts.
 - **API rate limits and CORS:** Understanding the Remotive API’s limitations and testing via browser required handling CORS and fetching data securely.
 
 ---
 
-## Credits
+## Acknowledgments
 
 - [Remotive API Documentation](https://remotive.io/api-documentation)
 - [HAProxy](https://www.haproxy.org/)
@@ -119,4 +119,4 @@ docker pull kalasa077/remote-job-finder:v1
 
 ## Demo Video
 
-_[Video demonstration about the job finder application](https://youtu.be/AMfzIeAhYsE)_
+_[Video demonstration about the job finder application](https://youtu.be/thieie)_
