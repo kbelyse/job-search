@@ -1,8 +1,8 @@
-# Remote Job Finder
+# Quick Job Finder
 
 ## Description
 
-Remote Job Finder is a simple web application that lets users search for remote job listings using the [Remotive API](https://remotive.io/api-documentation). Users can enter keywords and filter jobs by category (Software Dev, Marketing, Sales). The application is deployed using Docker containers with HAProxy configured as a load balancer to distribute traffic between two app instances.
+Remote Job Finder is a user-friendly web app that helps users search for remote job listings using the [Remotive API](https://remotive.io/api-documentation). Users can enter keywords and filter jobs by category like Software Development, Marketing, or Sales. The app runs inside Docker containers, with HAProxy acting as a load balancer to share traffic between two instances, ensuring better reliability and performance.
 
 ---
 
@@ -10,19 +10,28 @@ Remote Job Finder is a simple web application that lets users search for remote 
 
 - Search remote jobs by keyword
 - Filter job results by category
-- View job title, company, location, and apply link
+- View important job details like title, company, location, and application link
 - Load balancing across two app instances with HAProxy for improved availability and scalability
 
 ---
 
 ## Technologies Used
 
-- HTML, CSS, JavaScript (frontend)
-- Remotive API
-- Docker (containerization)
-- HAProxy (load balancing)
+- Frontend: HTML, CSS, JavaScript
+- External API: Remotive API
+- Containerization: Docker
+- Load balancing: HAProxy
 
 ---
+
+## Lab Setup for Deploymet
+
+This project uses a lab environment with three containers simulating two web servers and one load balancer:
+
+- Web01 and Web02 run the application instances.
+- Lb01 runs HAProxy, distributing incoming traffic between the two web servers.
+
+This setup is based on the [web_infra_lab](https://github.com/waka-man/web_infra_lab) repository, which provides the Docker Compose configuration and network setup to easily deploy and test your app with load balancing.
 
 ## Getting Started
 
